@@ -67,7 +67,7 @@ def test_compute_model_metrics_range(y, preds):
 
 def test_inference_shape(model, X):
     preds = inference(model, X)
-    assert len(preds) == len(X)
+    assert len(preds) == X.shape[0]
 
 
 def test_inference_values(model, X):

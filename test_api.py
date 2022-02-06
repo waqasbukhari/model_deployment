@@ -6,6 +6,9 @@ def test_get_index():
     with TestClient(app) as client:
         response = client.get("/")
 
+    print(response.status_code)
+    print(response.json())
+
     assert response.status_code == 200
     assert response.json() == {"message": "Welcome to Income prediction"}
 
