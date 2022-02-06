@@ -29,6 +29,9 @@ jobs:
           dvc remote add -df s3remote https://s3.console.aws.amazon.com/s3/buckets/udacity-student-waqas
           dvc pull
           ls data -l     
+      - name: Showing census data
+        run: |
+          head -10 data/census.csv
       - name: Install dependencies
         run: |
           pip install -r dev_requirements.txt
