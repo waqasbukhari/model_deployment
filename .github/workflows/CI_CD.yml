@@ -32,6 +32,8 @@ jobs:
       - name: Showing working directory
         run: |
           ls -l
+          ls model -l
+          ls data -l
       - name: Install dependencies
         run: |
           pip install -r dev_requirements.txt
