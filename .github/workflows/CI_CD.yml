@@ -25,7 +25,10 @@ jobs:
       - name: Setup DVC
         uses: iterative/setup-dvc@v1
       - name: Pull data from DVC
-        run: dvc pull
+        run: |
+          dvc remote add -d s3remote https://s3.console.aws.amazon.com/s3/buckets/udacity-student-waqas
+          dvc pull
+          ls starter/data -l     
       - name: Install dependencies
         run: |
           pip install -r dev_requirements.txt
