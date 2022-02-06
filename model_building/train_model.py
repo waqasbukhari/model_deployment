@@ -34,8 +34,8 @@ X_train, y_train, encoder, lb = process_data(
 )
 
 # save encoder and lb
-encoder_file = '../model/encoder.sav'
-lb_file = '../model/lb.sav'
+encoder_file = '../model/encoder.pkl'
+lb_file = '../model/lb.pkl'
 
 pickle.dump(encoder, open(encoder_file, 'wb'))
 pickle.dump(lb, open(lb_file, 'wb'))
@@ -48,7 +48,7 @@ X_test, y_test, encoder, lb = process_data(
     lb=lb)
 # Train and save a model.
 model = train_model(X_train, y_train)
-filename = '../model/model.sav'
+filename = '../model/model.pkl'
 pickle.dump(model, open(filename, 'wb'))
 
 # Inference on test data.

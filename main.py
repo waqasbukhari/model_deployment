@@ -55,13 +55,13 @@ def startup_event():
     Additionally load model and encoder on startup for faster predictions
     """
 
-    with open("model/encoder.sav", "rb") as f:
+    with open("model/encoder.pkl", "rb") as f:
         global ENCODER
         ENCODER = pickle.load(f)
-    with open("model/model.sav", "rb") as f:
+    with open("model/model.pkl", "rb") as f:
         global MODEL
         MODEL = pickle.load(f)
-    with open("model/lb.sav", "rb") as f:
+    with open("model/lb.pkl", "rb") as f:
         global LB
         LB = pickle.load(f)
 
