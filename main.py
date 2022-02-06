@@ -1,6 +1,5 @@
 import os
 import pickle
-
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
@@ -29,6 +28,7 @@ class Input(BaseModel):
 
 class Output(BaseModel):
     Income: str = Field(..., example=">50K")
+
 
 CAT_FEATURES = [
     "workclass",
@@ -78,11 +78,11 @@ def predict(data: Input):
         df, categorical_features=CAT_FEATURES, training=False, encoder=ENCODER
     )
     pred = inference(MODEL, X)
-    out_category = LB.inverse_transform(pred)[0]
+    # out_category = LB.inverse_transform(pred)[0]
 
     if pred == 1:
         pred = ">50K"
     elif pred == 0:
         pred = "<=50K"
     # return {"Income": out_category}
-    return {"Income":pred}
+    return {"Income": pred}

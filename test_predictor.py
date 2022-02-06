@@ -18,6 +18,7 @@ CAT_FEATURES = [
     "native-country",
 ]
 
+
 @pytest.fixture(scope="module")
 def X():
     data_path = "data/modified_census.csv"
