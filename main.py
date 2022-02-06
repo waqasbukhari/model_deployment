@@ -1,11 +1,11 @@
 import os
-import pickle
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from model_building.ml.data import process_data
 from model_building.ml.model import inference
 import joblib
+
 
 class Input(BaseModel):
     age: int = Field(..., example=49)
