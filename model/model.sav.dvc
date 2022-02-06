@@ -1,0 +1,4 @@
+outs:
+- md5: ceff2f9c6d9d856150cb09189c965aa6
+  size: 65762371
+  path: model.sav
