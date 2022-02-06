@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from model_building.ml.data import process_data
 from model_building.ml.model import inference
-
+import joblib
 
 class Input(BaseModel):
     age: int = Field(..., example=49)
@@ -57,13 +57,13 @@ def startup_event():
 
     with open("model/encoder.pkl", "rb") as f:
         global ENCODER
-        ENCODER = pickle.load(f)
+        ENCODER = joblib.load(f)
     with open("model/model.pkl", "rb") as f:
         global MODEL
-        MODEL = pickle.load(f)
+        MODEL = joblib.load(f)
     with open("model/lb.pkl", "rb") as f:
         global LB
-        LB = pickle.load(f)
+        LB = joblib.load(f)
 
 
 @app.get("/")
