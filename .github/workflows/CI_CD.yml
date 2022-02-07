@@ -40,5 +40,4 @@ jobs:
           pip install -r requirements.txt
       - name: Run Linter
         run: flake8 .
-      - name: Run Tests
-        run: python -m pytest
+
